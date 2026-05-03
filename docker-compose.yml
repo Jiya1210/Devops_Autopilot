@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  mcp-server:
+    build:
+      context: ./packages/mcp-server
+      dockerfile: Dockerfile
+    container_name: devops-autopilot-mcp
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+    volumes:
+      - ./packages/mcp-server:/app
+      - /app/node_modules
+    restart: unless-stopped
+    networks:
+      - devops-autopilot
+
+  agent-runner:
+    build:
+      context: ./packages/agent-runner
+      dockerfile: Dockerfile
+    container_name: devops-autopilot-agent
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - MCP_SERVER_URL=http://mcp-server:4000/mcp
+    volumes:
+      - ./packages/agent-runner:/app
+      - /app/node_modules
+    depends_on:
+      - mcp-server
+    restart: unless-stopped
+    networks:
+      - devops-autopilot
+
+  demo-app:
+    build:
+      context: ./packages/demo-app
+      dockerfile: Dockerfile
+    container_name: devops-autopilot-demo
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    volumes:
+      - ./packages/demo-app:/app
+      - /app/node_modules
+    restart: unless-stopped
+    networks:
+      - devops-autopilot
+
+networks:
+  devops-autopilot:
+    driver: bridge
+
+# Made with Bob

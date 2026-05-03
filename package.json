@@ -1,0 +1,31 @@
+{
+  "name": "devops-autopilot",
+  "version": "1.0.0",
+  "description": "Zero Touch Test Generation and Maintenance Engine - IBM Bob Hackathon 2026",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:mcp": "npm run dev --workspace=packages/mcp-server",
+    "dev:agent": "npm run dev --workspace=packages/agent-runner",
+    "dev:demo": "npm run dev --workspace=packages/demo-app",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces"
+  },
+  "keywords": [
+    "devops",
+    "autopilot",
+    "ibm-bob",
+    "mcp",
+    "incident-response",
+    "automation"
+  ],
+  "author": "DevOps Autopilot Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
