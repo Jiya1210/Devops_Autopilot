@@ -135,9 +135,6 @@ npm run build
 
 This project was developed for the IBM Bob Hackathon 2026. Contributions are welcome!
 
-## 📄 License
-
-MIT License - see LICENSE file for details
 
 ## 🏆 IBM Bob Hackathon 2026
 
