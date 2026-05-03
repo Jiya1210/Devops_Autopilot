@@ -147,24 +147,6 @@ devops-autopilot/
 npm run build
 ```
 
-### Run Tests
-
-```bash
-npm run test
-```
-
-### Lint Code
-
-```bash
-npm run lint
-```
-
-## 📚 Documentation
-
-- [Low Level Design](./docs/06_lld_low_level_design.md)
-- [MCP Server Documentation](./packages/mcp-server/README.md)
-- [Agent Runner Documentation](./packages/agent-runner/README.md)
-
 ## 🤝 Contributing
 
 This project was developed for the IBM Bob Hackathon 2026. Contributions are welcome!
@@ -175,7 +157,7 @@ MIT License - see LICENSE file for details
 
 ## 🏆 IBM Bob Hackathon 2026
 
-**Team**: aaryawart  
+**Team**: AARYAWART AI
 **Challenge**: Zero Touch Test Generation and Maintenance  
 **Technology**: IBM Bob + MCP + Multi-Agent Orchestration
 
