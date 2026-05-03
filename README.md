@@ -122,22 +122,6 @@ curl -X POST http://localhost:3000/api/order \
 # Check Jira for the ticket update
 ```
 
-## 📁 Project Structure
-
-```
-devops-autopilot/
-├── package.json              # Root package with npm workspaces
-├── .env                      # Environment variables (gitignored)
-├── .env.example              # Environment template
-├── docker-compose.yml        # Local dev environment
-├── README.md                 # This file
-├── bob_sessions/             # Task documentation
-└── packages/
-    ├── mcp-server/           # MCP server
-    ├── agent-runner/         # Agent orchestrator
-    ├── integrations/         # Shared API clients
-    └── demo-app/             # Demo application
-```
 
 ## 🛠️ Development
 
